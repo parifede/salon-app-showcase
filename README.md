@@ -144,3 +144,4 @@ Security is fundamental to me: I care a lot about privacy, and client and owner 
 ---
 
 *Screenshots use demo data.*
+© 2026 parifede — all rights reserved
