@@ -144,3 +144,4 @@ La sicurezza per me è fondamentale: punto molto sulla privacy, e i dati di clie
 ---
 
 *Le schermate usano dati dimostrativi.*
+© 2026 parifede — tutti i diritti riservati
