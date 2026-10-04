@@ -5,9 +5,7 @@
 > Questo repository è una **vetrina**: contiene la struttura delle cartelle e le schermate dell'app, non il codice. Il codice è privato perché il prodotto è in uso da un cliente reale.
 
 <p align="center">
-  <img src="docs/screens/01-feed.png" width="230" alt="Feed dei saloni">
-  <img src="docs/screens/03-profilo-salone.png" width="230" alt="Profilo del salone">
-  <img src="docs/screens/04-prenotazione.png" width="230" alt="Prenotazione">
+  <img src="docs/screens/demo.gif" width="300" alt="Anteprima animata dell'app">
 </p>
 
 ## 1. Cos'è
@@ -16,11 +14,10 @@ Un'app per gestire il salone e gli appuntamenti in modo semplice. Mette in conta
 
 ## 2. Il problema
 
+<img align="right" width="210" src="docs/screens/06-cruscotto.png" alt="Cruscotto del titolare">
+
 È pensata per due tipi di persone. I titolari che vogliono gestire il proprio salone in modo organizzato ed efficiente: metriche su ogni sede, dipendenti e turni, clienti. E soprattutto i clienti che cercano il prossimo salone: possono spaziare tra varie categorie e sapere in anticipo a che mani si affidano, perché la vetrina di ogni salone è trasparente sul servizio offerto e sulla qualità.
 
-<p align="center">
-  <img src="docs/screens/06-cruscotto.png" width="260" alt="Cruscotto del titolare">
-</p>
 
 ### Cosa cambia rispetto alle app esistenti
 
@@ -32,20 +29,25 @@ Parlando con il mio parrucchiere, mi ha raccontato tutti i problemi delle app ch
 - **Vetrina dei prodotti:** molti titolari vogliono mostrare ai clienti i prodotti in vendita nel salone, che di solito si perdono nella confusione della prenotazione quando ci si presenta lì.
 - **Disponibilità chiara:** per ogni salone si vede subito quando c'è posto.
 
+<br clear="right">
+
 ## 3. Come funziona
+
+<img align="right" width="190" src="docs/screens/02-ricerca.png" alt="Ricerca per categorie">
 
 1. Il cliente scarica l'app dagli store ufficiali e si trova subito davanti una carrellata di post e video dei saloni della sua zona, localizzati tramite GPS. Fin da subito si rende conto di quali servizi ha intorno.
 2. Cerca quello che gli interessa nella barra in alto, anche per macro categorie, e sceglie sulla mappa interattiva il salone più vicino o quello che più gli piace.
 
-   <img src="docs/screens/02-ricerca.png" width="230" alt="Ricerca per categorie">
-
 3. Entra nel profilo del salone e vede quanto è apprezzato: recensioni, prodotti, servizi e team.
 4. Scelto il salone, preme "Prenota": sceglie il professionista, il servizio e l'orario, e può aggiungere dettagli per richieste particolari che escono dagli standard del salone. Per prenotare serve l'iscrizione.
 5. Dopo la prenotazione può aggiungerla al calendario, aprire le indicazioni stradali e scrivere direttamente al salone, per dare o chiedere informazioni.
+
+<img align="left" width="190" src="docs/screens/07-non-presentato.png" alt="Appuntamento non presentato">
+
 6. L'app gli ricorda l'appuntamento 24 ore prima e un'ora prima.
 7. Superato l'orario, l'appuntamento resta confermato. Se il cliente non si presenta, il titolare o il professionista lo segnano come "Non presentato": esce dall'incasso stimato e finisce nel contatore dei non presentati del cruscotto.
 
-   <img src="docs/screens/07-non-presentato.png" width="230" alt="Appuntamento segnato come non presentato">
+<br clear="all">
 
 ## 4. Architettura
 
@@ -90,12 +92,13 @@ La sicurezza per me è fondamentale: punto molto sulla privacy, e i dati di clie
 
 ## 7. Problemi e soluzioni
 
+<img align="right" width="210" src="docs/screens/05-chat-post.png" alt="Post inoltrato in chat">
+
 - **Il logo personalizzato.** Volevo che ogni cliente vedesse sul telefono il nome e il logo del proprio salone. I sistemi operativi però non permettono di cambiare il nome di un'app, e accettano solo icone già incluse al momento della pubblicazione. La soluzione: il nome resta fisso, e ogni nuovo logo entra nell'app con un aggiornamento, diventando selezionabile.
 - **Dare valore ai contenuti dei saloni.** I saloni producono foto e video dei loro lavori, ma serviva un modo perché quel materiale portasse davvero a una prenotazione. La soluzione: ogni post si può inoltrare direttamente in chat al salone, come riferimento o modello del servizio desiderato. Se vedo un taglio che mi piace, lo mando al salone e chiedo quello, senza dover spiegare altro. Il cliente non deve più capire da solo cosa vuole: è il salone che gli propone qualcosa che lo attira, e dal feed alla prenotazione il passo è brevissimo. È l'obiettivo, da verificare con l'uso reale.
 
-<p align="center">
-  <img src="docs/screens/05-chat-post.png" width="260" alt="Post inoltrato in chat al salone">
-</p>
+
+<br clear="right">
 
 ## 8. Stato
 

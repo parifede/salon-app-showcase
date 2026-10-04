@@ -5,9 +5,7 @@
 > This repository is a **showcase**: it contains the folder structure and screenshots of the app, not the code. The code is private because the product is in use by a real client.
 
 <p align="center">
-  <img src="docs/screens/01-feed.png" width="230" alt="Salon feed">
-  <img src="docs/screens/03-profilo-salone.png" width="230" alt="Salon profile">
-  <img src="docs/screens/04-prenotazione.png" width="230" alt="Booking">
+  <img src="docs/screens/demo.gif" width="300" alt="Animated app preview">
 </p>
 
 ## 1. What it is
@@ -16,11 +14,10 @@ An app for managing a salon and its appointments in a simple way. It connects ow
 
 ## 2. The problem
 
+<img align="right" width="210" src="docs/screens/06-cruscotto.png" alt="Owner dashboard">
+
 It is built for two kinds of people. Owners who want to run their salon in an organized, efficient way: metrics for each location, staff and shifts, clients. And above all clients looking for their next salon: they can browse across categories and know in advance whose hands they are putting themselves in, because every salon's showcase is transparent about the service it offers and its quality.
 
-<p align="center">
-  <img src="docs/screens/06-cruscotto.png" width="260" alt="Owner dashboard">
-</p>
 
 ### What is different from existing apps
 
@@ -32,20 +29,25 @@ Talking with my hairdresser, he told me about all the problems with the apps he 
 - **Product showcase:** many owners want to show clients the products they sell in the salon, which usually get lost in the confusion of the visit.
 - **Clear availability:** for every salon you can immediately see when there is a free slot.
 
+<br clear="right">
+
 ## 3. How it works
+
+<img align="right" width="190" src="docs/screens/02-ricerca.png" alt="Search by category">
 
 1. The client downloads the app from the official stores and is immediately shown a stream of posts and videos from salons in their area, located via GPS. Right away they can see which services are around them.
 2. They search for what they want in the top bar, also by main category, and pick the nearest salon — or the one they like most — on the interactive map.
 
-   <img src="docs/screens/02-ricerca.png" width="230" alt="Search by category">
-
 3. They open the salon's profile and see how well regarded it is: reviews, products, services and team.
 4. Once they have chosen, they tap "Book": they pick the professional, the service and the time, and can add details for special requests outside the salon's standard offer. Booking requires an account.
 5. After booking they can add it to their calendar, open directions, and message the salon directly to give or ask for information.
+
+<img align="left" width="190" src="docs/screens/07-non-presentato.png" alt="No-show appointment">
+
 6. The app reminds them of the appointment 24 hours and one hour before.
 7. Once the time has passed, the appointment stays confirmed. If the client does not show up, the owner or the professional marks it as "No-show": it is removed from estimated revenue and counted in the dashboard's no-show counter.
 
-   <img src="docs/screens/07-non-presentato.png" width="230" alt="Appointment marked as no-show">
+<br clear="all">
 
 ## 4. Architecture
 
@@ -90,12 +92,13 @@ Security is fundamental to me: I care a lot about privacy, and client and owner 
 
 ## 7. Problems and solutions
 
+<img align="right" width="210" src="docs/screens/05-chat-post.png" alt="Post forwarded in chat">
+
 - **The custom logo.** I wanted every client to see their salon's name and logo on their phone. Operating systems, however, do not allow changing an app's name, and only accept icons already included at publication. The solution: the name stays fixed, and each new logo ships with an app update and becomes selectable.
 - **Giving value to salons' content.** Salons produce photos and videos of their work, but there had to be a way for that material to actually lead to a booking. The solution: every post can be forwarded directly to the salon in chat, as a reference or template for the desired service. If I see a cut I like, I send it to the salon and ask for that, with no further explanation. Clients no longer have to work out on their own what they want: the salon offers them something that catches their eye, and from feed to booking is a very short step. That is the goal, to be validated with real use.
 
-<p align="center">
-  <img src="docs/screens/05-chat-post.png" width="260" alt="Post forwarded to the salon in chat">
-</p>
+
+<br clear="right">
 
 ## 8. Status
 
