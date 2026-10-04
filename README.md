@@ -64,6 +64,8 @@ flowchart LR
   GH["GitHub Actions"] -->|nightly backup| R2["Cloudflare R2"]
 ```
 
+<img align="right" width="200" src="docs/screens/08-mappa.png" alt="Salon map">
+
 - **App:** React Native with Expo and TypeScript. One codebase for three platforms, interface in Italian and English.
 - **Database:** PostgreSQL on Supabase, with Row Level Security on every table. The logic lives in SQL functions that check who is calling before returning any data. Personal contact details are kept in a separate table. 37 versioned migrations.
 - **Authentication:** Supabase Auth with email and password; Sign in with Apple and Google already in the code.
@@ -75,6 +77,8 @@ flowchart LR
 - **Backup:** nightly copy of the database to Cloudflare R2.
 
 Push notifications and Apple/Google sign-in are ready in the code and waiting for production credentials.
+
+<br clear="right">
 
 ## 5. Technical choices
 
@@ -88,7 +92,7 @@ Security is fundamental to me: I care a lot about privacy, and client and owner 
 - **Checks inside every function:** before returning data, each function verifies who is calling it. The checks live in a private schema that cannot be reached from outside.
 - **Data separated by sensitivity:** personal contacts in a separate table, chat photos in private storage with links that expire after one hour.
 - **Attack-style review:** it found 16 issues, 15 minor and one serious — a chain that, starting from reviews, made it possible to trace an account's identifier and reach its personal data. Fixed before release.
-- **Automated authorization tests** *(in progress)*: for every function, one user tries to access another user's data. The expected result is always denial.
+- **Automated authorization tests:** for every function, one user tries to access another user's data, and the expected result is always denial. They run in CI on every push.
 
 ## 7. Problems and solutions
 
@@ -107,7 +111,8 @@ Security is fundamental to me: I care a lot about privacy, and client and owner 
 - In development, not yet published on the stores.
 - First client ready to use it: a salon with two locations.
 - One codebase for iOS, Android and web; 37 database migrations; about 80 functions with access checks.
-- Before launch: dedicated email sender, push notification credentials, automated authorization tests.
+- 303 automated tests: 279 unit, server-function and database tests (Vitest) run in CI on every push and pull request, plus 24 end-to-end tests (Playwright) run locally. On top of that, type checking and linting.
+- Before launch: dedicated email sender, push notification credentials.
 
 ## 9. Method
 
@@ -136,7 +141,6 @@ Security is fundamental to me: I care a lot about privacy, and client and owner 
 - Choose the final name.
 - Dedicated email sender for sign-up confirmations.
 - Push notification credentials (Apple and Android) and an access token for Expo Push.
-- Automated authorization tests and a GitHub Action that runs the tests on every change.
 - Linking the salon's social accounts.
 - Test the custom logo on a real iPhone.
 - Store release.

@@ -64,6 +64,8 @@ flowchart LR
   GH["GitHub Actions"] -->|backup notturno| R2["Cloudflare R2"]
 ```
 
+<img align="right" width="200" src="docs/screens/08-mappa.png" alt="Mappa dei saloni">
+
 - **App:** React Native con Expo e TypeScript. Un solo codice per tre piattaforme, interfaccia in italiano e inglese.
 - **Database:** PostgreSQL su Supabase, con Row Level Security su ogni tabella. La logica sta in funzioni SQL che verificano chi le chiama prima di restituire qualsiasi dato. I contatti personali stanno in una tabella separata. 37 migrazioni versionate.
 - **Autenticazione:** Supabase Auth con email e password; accesso con Apple e Google già pronto nel codice.
@@ -75,6 +77,8 @@ flowchart LR
 - **Backup:** copia notturna del database su Cloudflare R2.
 
 Notifiche push e accesso con Apple e Google sono pronti nel codice e attendono le credenziali di produzione.
+
+<br clear="right">
 
 ## 5. Scelte tecniche
 
@@ -88,7 +92,7 @@ La sicurezza per me è fondamentale: punto molto sulla privacy, e i dati di clie
 - **Controlli dentro ogni funzione:** prima di restituire dati, ogni funzione verifica chi la sta chiamando. I controlli stanno in uno schema privato, non raggiungibile dall'esterno.
 - **Dati separati per sensibilità:** contatti personali in una tabella a parte, foto della chat in uno spazio privato con link che scadono dopo un'ora.
 - **Revisione con test d'attacco:** ha trovato 16 problemi, 15 minori e uno serio — una catena che, partendo dalle recensioni, permetteva di risalire all'identificativo di un account e ai suoi dati personali. Corretto prima del rilascio.
-- **Test di autorizzazione automatici** *(in corso)*: per ogni funzione, un utente prova ad accedere ai dati di un altro. Il risultato atteso è sempre il divieto.
+- **Test di autorizzazione automatici:** per ogni funzione, un utente prova ad accedere ai dati di un altro, e il risultato atteso è sempre il divieto. Girano in CI a ogni push.
 
 ## 7. Problemi e soluzioni
 
@@ -107,7 +111,8 @@ La sicurezza per me è fondamentale: punto molto sulla privacy, e i dati di clie
 - In sviluppo, non ancora pubblicata sugli store.
 - Primo cliente pronto all'uso: un salone con due sedi.
 - Codice unico per iOS, Android e web; 37 migrazioni del database; circa 80 funzioni con controlli di accesso.
-- Prima del lancio: mittente email dedicato, credenziali per le notifiche push, test di autorizzazione automatici.
+- 303 test automatici: 279 tra unità, funzioni server e database (Vitest), eseguiti in CI a ogni push e pull request, più 24 test end-to-end (Playwright) eseguiti in locale. In più, controllo dei tipi e lint.
+- Prima del lancio: mittente email dedicato, credenziali per le notifiche push.
 
 ## 9. Metodo
 
@@ -136,7 +141,6 @@ La sicurezza per me è fondamentale: punto molto sulla privacy, e i dati di clie
 - Scegliere il nome definitivo.
 - Mittente email dedicato, per le conferme di registrazione.
 - Credenziali per le notifiche push (Apple e Android) e token d'accesso per Expo Push.
-- Test di autorizzazione automatici e una GitHub Action che lanci i test a ogni modifica.
 - Collegamento degli account social del salone.
 - Provare il logo personalizzato su un iPhone vero.
 - Pubblicazione sugli store.
